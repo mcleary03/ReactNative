@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 // wrapping this with Card styles
 import Card from './Card';
 // wrapping content with CardSection styles
@@ -16,7 +16,7 @@ import Button from './Button';
   // But the best way to destructure this much is inside the body:
   const AlbumDetail = ({ album }) => {
     // The recommended way to destructure props:
-    const { title, artist, thumbnail_image, image } = album;
+    const { title, artist, thumbnail_image, image, url } = album;
     // We can also destructure the styles:
     const {
       thumbnailStyle,
@@ -53,7 +53,7 @@ import Button from './Button';
 
       <CardSection>
         {/* Adding prop of onPress (this is an arbitrary name, not the built in method) */}
-        <Button onPress={() => console.log(title)} />
+        <Button onPress={() => Linking.openURL(url)} />
       </CardSection>
     </Card>
   );
