@@ -4,6 +4,7 @@ import { Text, View, Image } from 'react-native';
 import Card from './Card';
 // wrapping content with CardSection styles
 import CardSection from './CardSection';
+import Button from './Button';
 
 // props comes from the rederAlbums function in AlbumList.js, we can use all data in props this way.
 // const AlbumDetail = (props) => {
@@ -42,11 +43,16 @@ import CardSection from './CardSection';
           <Text>{artist}</Text>
         </View>
       </CardSection>
+
       <CardSection>
         <Image
           style={imageStyle}
           source={{ uri: image }}
         />
+      </CardSection>
+      
+      <CardSection>
+        <Button />
       </CardSection>
     </Card>
   );
