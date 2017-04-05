@@ -50,9 +50,10 @@ import Button from './Button';
           source={{ uri: image }}
         />
       </CardSection>
-      
+
       <CardSection>
-        <Button />
+        {/* Adding prop of onPress (this is an arbitrary name, not the built in method) */}
+        <Button onPress={() => console.log(title)} />
       </CardSection>
     </Card>
   );

@@ -1,11 +1,19 @@
+// This button is designed to be reusable for any purpose
+
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-const Button = () => {
+// This is how we pass the onPress functionality down to
+//  the button when the user presses it. This is the actual onpress method.
+const Button = ({ onPress }) => {
   const { buttonStyle, textStyle } = styles;
 
   return (
-    <TouchableOpacity style={buttonStyle}>
+    // onPress is just connecting to what we called 'onPress' in the AlbumList.
+    // So this now does whatever we define a button to do
+    //  where it is placed using the 'onPress' prop.
+    // The format here is ->  method={prop}
+    <TouchableOpacity onPress={onPress} style={buttonStyle}>
       <Text style={textStyle}>
         Click me!!!
       </Text>
