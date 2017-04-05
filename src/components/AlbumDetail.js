@@ -15,15 +15,21 @@ import CardSection from './CardSection';
   // But the best way to destructure this much is inside the body:
   const AlbumDetail = ({ album }) => {
     // The recommended way to destructure props:
-    const { title, artist, thumbnail_image } = album;
+    const { title, artist, thumbnail_image, image } = album;
     // We can also destructure the styles:
-    const { thumbnailStyle, headerContentStyle } = styles;
+    const {
+      thumbnailStyle,
+      headerContentStyle,
+      thumbnailContainerStyle,
+      headerTextStyle,
+      imageStyle
+    } = styles;
   // since we are passing Card this Text component,
   // we need to go tell Card how to render it.
   return (
     <Card>
       <CardSection>
-        <View>
+        <View style={thumbnailContainerStyle}>
           {/* Images in RN do not resize automatically
             we have to specify exactly what size to render */}
           <Image
@@ -32,9 +38,15 @@ import CardSection from './CardSection';
           />
         </View>
         <View style={headerContentStyle}>
-          <Text>{title}</Text>
+          <Text style={headerTextStyle}>{title}</Text>
           <Text>{artist}</Text>
         </View>
+      </CardSection>
+      <CardSection>
+        <Image
+          style={imageStyle}
+          source={{ uri: image }}
+        />
       </CardSection>
     </Card>
   );
@@ -45,9 +57,25 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'space-around'
   },
+  headerTextStyle: {
+    fontSize: 18
+  },
   thumbnailStyle: {
     height: 50,
     width: 50,
+  },
+  thumbnailContainerStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 10,
+    marginRight: 10
+  },
+  imageStyle: {
+    height: 300,
+    // heres a trick to make the image take up the
+    //  full width of the screen without the need to calculate the actual width:
+    flex: 1,
+    width: null
   }
 };
 
