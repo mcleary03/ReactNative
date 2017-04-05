@@ -5,7 +5,7 @@ import { Text, TouchableOpacity } from 'react-native';
 
 // This is how we pass the onPress functionality down to
 //  the button when the user presses it. This is the actual onpress method.
-const Button = ({ onPress }) => {
+const Button = ({ onPress, children }) => {
   const { buttonStyle, textStyle } = styles;
 
   return (
@@ -15,7 +15,7 @@ const Button = ({ onPress }) => {
     // The format here is ->  method={prop}
     <TouchableOpacity onPress={onPress} style={buttonStyle}>
       <Text style={textStyle}>
-        Click me!!!
+        {children}
       </Text>
     </TouchableOpacity>
   );

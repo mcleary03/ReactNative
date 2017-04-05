@@ -53,7 +53,9 @@ import Button from './Button';
 
       <CardSection>
         {/* Adding prop of onPress (this is an arbitrary name, not the built in method) */}
-        <Button onPress={() => Linking.openURL(url)} />
+        <Button onPress={() => Linking.openURL(url)}>
+          Buy Now
+        </Button>
       </CardSection>
     </Card>
   );
