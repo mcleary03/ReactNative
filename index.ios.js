@@ -10,8 +10,11 @@ const App = () => (
   // Only one top level tag can be returned here so,
   //  All components will be nested inside this View tag
 
-  // headerText is passed into the header component with the string 'Albums' to be displayed
-  <View>
+  // style={{ flex: 1 }} says: please expand this component
+  // to fill the entire content area of the device.
+  //  This is necessary for ScrollView to work properly.
+  <View style={{ flex: 1 }}>
+    {/* headerText is passed into the header component with the string 'Albums' to be displayed */}
     <Header headerText={'Albums'} />
     <AlbumList />
   </View>

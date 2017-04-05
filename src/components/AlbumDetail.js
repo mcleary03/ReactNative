@@ -72,8 +72,8 @@ const styles = {
   },
   imageStyle: {
     height: 300,
-    // heres a trick to make the image take up the
-    //  full width of the screen without the need to calculate the actual width:
+    // heres a trick to make the image take up the full width
+    //  of the screen without the need to calculate the actual width:
     flex: 1,
     width: null
   }

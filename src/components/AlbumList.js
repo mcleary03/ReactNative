@@ -1,8 +1,9 @@
 // Import all of React, and Component from React
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
 import AlbumDetail from './AlbumDetail';
+
 
 // refactored from functional to class component
 // necessary to make http requests
@@ -37,9 +38,9 @@ class AlbumList extends Component {
     // using the map function above, we will render
     //  each album from the list inside this component
     return (
-      <View>
+      <ScrollView>
         {this.renderAlbums()}
-      </View>
+      </ScrollView>
     );
   }
 }
